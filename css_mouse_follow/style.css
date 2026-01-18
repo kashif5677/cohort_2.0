@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    anchor-name: --some-anchor;
+}
+.box:hover{
+    anchor-name:--some-anchor ;
+    transform: scale(1.2) !important;
+
+}
+
+body:has(.box:hover) .box{
+    transform: scale(0.8);
+    opacity: 0.7;
+
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 70px;
+    padding: 1px;
+    margin: 1px;
+    transition: all 0.1s linear;
+}
+
+
+.red{
+    /* background-color: red; */
+    color: rgb(235, 227, 227);
+}
+.blue{
+    /* background-color: blue; */
+    color: white;
+}
+.green{
+    /* background-color: green; */
+    color: white;
+}
+.anchor{
+    background-color: #e6d7d7;
+    border-radius: 10px;
+    top: anchor(top);
+    left: anchor(left);
+    bottom: anchor(bottom);
+    right: anchor(right);
+    pointer-events: none;
+    position: absolute;
+    transition: all 0.3s linear;
+    position-anchor: --some-anchor;
+    mix-blend-mode: difference;
+
+}
